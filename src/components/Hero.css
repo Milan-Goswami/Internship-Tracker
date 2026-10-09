@@ -1,0 +1,479 @@
+/* Reference-Driven Hero Section Architecture (Elian Ross Benchmark) */
+.reference-hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-primary, #F8F9F5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6.5rem 0 2rem 0;
+}
+
+/* Layer 1: Living Ambient Canvas with Breathing Lime Atmosphere */
+.ref-hero-ambient-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Layer 2: Deep Atmospheric CSS Blobs (Hardware-accelerated) */
+.ref-hero-ambient-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  will-change: transform;
+}
+
+.blob-left {
+  top: 25%;
+  left: -8%;
+  width: 55vw;
+  height: 65vh;
+  max-width: 800px;
+  background: radial-gradient(circle, var(--hero-blob-lime, rgba(148, 236, 44, 0.55)) 0%, var(--hero-blob-lime-outer, rgba(172, 248, 72, 0.22)) 45%, transparent 72%);
+  animation: floatAmbientLeft 12s ease-in-out infinite alternate;
+}
+
+.blob-right {
+  top: 22%;
+  right: -8%;
+  width: 55vw;
+  height: 65vh;
+  max-width: 800px;
+  background: radial-gradient(circle, var(--hero-blob-lime, rgba(148, 236, 44, 0.55)) 0%, var(--hero-blob-lime-outer, rgba(172, 248, 72, 0.22)) 45%, transparent 72%);
+  animation: floatAmbientRight 14s ease-in-out infinite alternate;
+}
+
+.blob-center {
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48vw;
+  height: 48vh;
+  max-width: 680px;
+  background: radial-gradient(circle, var(--hero-blob-lime, rgba(156, 240, 52, 0.40)) 0%, var(--hero-blob-lime-outer, rgba(178, 250, 78, 0.15)) 45%, transparent 68%);
+}
+
+[data-theme="dark"] .ambient-blob {
+  filter: blur(85px);
+  opacity: 0.85;
+}
+
+@keyframes floatAmbientLeft {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(4vw, 3vh) scale(1.08); }
+}
+
+@keyframes floatAmbientRight {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-4vw, -2vh) scale(1.06); }
+}
+
+/* Layer 3: Main Stage Container */
+.ref-hero-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  min-height: calc(100vh - 8.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Top Headline Composition matching reference hierarchy */
+.ref-headline-group {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.ref-display-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  line-height: 0.95;
+}
+
+.ref-title-sans {
+  font-family: var(--font-sans-display, 'Plus Jakarta Sans', sans-serif);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 7.5vw, 6.8rem);
+  letter-spacing: -0.035em;
+  color: var(--text-main, #141712);
+}
+
+.ref-title-serif {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(3.8rem, 9.8vw, 8.4rem);
+  letter-spacing: -0.02em;
+  color: var(--text-main, #141712);
+  margin-top: -0.1em;
+}
+
+/* Central Portrait Composition layered directly with headline */
+.ref-portrait-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Dark mode portrait separation aura so suit never blends into graphite background */
+[data-theme="dark"] .ref-portrait-container::before {
+  content: "";
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(164, 249, 65, 0.13) 0%, rgba(52, 211, 153, 0.05) 48%, transparent 70%);
+  filter: blur(55px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.ref-portrait-img {
+  height: 56vh;
+  max-height: 530px;
+  min-height: 380px;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.14));
+  mask-image: linear-gradient(to top, transparent 0%, black 8%, black 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 8%, black 100%);
+}
+
+/* Floating Mid-Left Pill matching reference */
+.ref-pill-left {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  background: var(--bg-surface-translucent, rgba(255, 255, 255, 0.94));
+  border: 1px solid var(--border-main, rgba(0, 0, 0, 0.08));
+  box-shadow: var(--shadow-sm, 0 8px 24px rgba(0, 0, 0, 0.06));
+  border-radius: 9999px;
+  padding: 0.65rem 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ref-pill-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-spring-green, #16A34A);
+  box-shadow: 0 0 10px var(--accent-spring-green, #16A34A);
+  flex-shrink: 0;
+  animation: pulsePulse 2s infinite ease-in-out;
+}
+
+@keyframes pulsePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.85); opacity: 0.5; }
+}
+
+.ref-pill-text {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main, #1A1D16);
+  white-space: nowrap;
+}
+
+/* Floating Mid-Right Editorial Copy matching reference */
+.ref-copy-right {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  max-width: 260px;
+  text-align: left;
+}
+
+.ref-statement-text {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.96rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #242820);
+  margin: 0;
+}
+
+/* Floating Bottom-Left Trust Proof matching reference avatar cluster */
+.ref-badge-bottom-left {
+  position: absolute;
+  left: 2rem;
+  bottom: 1.5rem;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 380px;
+}
+
+.ref-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-disc {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-surface-elevated, #FFFFFF);
+  border: 2px solid var(--bg-primary, #F8F9F5);
+  box-shadow: var(--shadow-sm, 0 2px 6px rgba(0,0,0,0.08));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  margin-left: -8px;
+}
+
+.avatar-disc:first-child {
+  margin-left: 0;
+}
+
+.ref-trust-text {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--text-muted, #555A4E);
+}
+
+.ref-trust-text strong {
+  color: var(--text-main, #141712);
+}
+
+/* Floating Bottom-Right Primary CTA Button matching reference */
+.ref-cta-bottom-right {
+  position: absolute;
+  right: 2rem;
+  bottom: 1.5rem;
+  z-index: 4;
+}
+
+.ref-view-resume-btn {
+  background: var(--hero-cta-bg, #141712);
+  color: var(--hero-cta-text, #FFFFFF);
+  border: 1px solid var(--border-accent, rgba(164, 249, 65, 0.45));
+  border-radius: 9999px;
+  padding: 0.85rem 1.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--hero-cta-shadow, 0 6px 22px rgba(0, 0, 0, 0.18));
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ref-view-resume-btn:hover {
+  background: var(--hero-cta-hover-bg, #000000);
+  border-color: var(--accent-emerald, #10B981);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ref-view-resume-btn .btn-icon-core {
+  color: var(--accent-green-primary, #A4F941);
+  display: inline-flex;
+  align-items: center;
+}
+
+.ref-view-resume-btn .btn-arrow-core {
+  color: var(--accent-green-primary, #A4F941);
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+/* Contrast optimization for dark mode CTA icons */
+[data-theme="dark"] .ref-view-resume-btn .btn-icon-core,
+[data-theme="dark"] .ref-view-resume-btn .btn-arrow-core {
+  color: #15803D; /* Deep emerald against light CTA surface = 7:1+ contrast */
+}
+
+.ref-view-resume-btn:hover .btn-arrow-core {
+  transform: translate(2px, -2px);
+}
+
+.mini-brand-svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.mini-edu-icon {
+  color: #8B5CF6;
+}
+
+/* ======================================================== */
+/* RESPONSIVE DESIGN ADAPTATION FOR ALL 7 VIEWPORTS */
+/* 1536×776, 1440×900, 1280×800, 1024×768, 768×1024, 390×844, 375×667 */
+/* ======================================================== */
+
+@media (max-width: 1280px) {
+  .ref-pill-left {
+    left: 1.5rem;
+  }
+  .ref-copy-right {
+    right: 1.5rem;
+    max-width: 220px;
+  }
+  .ref-badge-bottom-left {
+    left: 1.5rem;
+  }
+  .ref-cta-bottom-right {
+    right: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .reference-hero-section {
+    min-height: auto;
+    padding: 7rem 0 3.5rem 0;
+  }
+
+  .ref-hero-stage {
+    min-height: auto;
+    gap: 2rem;
+  }
+
+  .ref-portrait-container {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 1rem 0;
+  }
+
+  .ref-portrait-img {
+    height: 45vh;
+    max-height: 420px;
+  }
+
+  .ref-pill-left {
+    position: static;
+    transform: none;
+    margin: 0.5rem auto;
+  }
+
+  .ref-copy-right {
+    position: static;
+    transform: none;
+    max-width: 480px;
+    text-align: center;
+    margin: 0.5rem auto;
+  }
+
+  .ref-badge-bottom-left {
+    position: static;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .ref-cta-bottom-right {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reference-hero-section {
+    padding: 6rem 0 3rem 0;
+  }
+
+  .ref-title-sans {
+    font-size: clamp(2.5rem, 11vw, 3.8rem);
+  }
+
+  .ref-title-serif {
+    font-size: clamp(2.9rem, 13vw, 4.4rem);
+  }
+
+  .ref-portrait-img {
+    height: 40vh;
+    max-height: 350px;
+    min-height: 280px;
+  }
+
+  .ref-pill-text {
+    font-size: 0.82rem;
+  }
+
+  .ref-statement-text {
+    font-size: 0.88rem;
+    padding: 0 1rem;
+  }
+
+  .ref-badge-bottom-left {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ref-trust-text {
+    font-size: 0.75rem;
+    padding: 0 1rem;
+  }
+
+  .ref-get-in-touch-btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ref-title-sans {
+    font-size: 2.35rem;
+  }
+
+  .ref-title-serif {
+    font-size: 2.75rem;
+  }
+
+  .ref-portrait-img {
+    max-height: 300px;
+  }
+
+  .ref-pill-left {
+    padding: 0.5rem 1rem;
+  }
+}

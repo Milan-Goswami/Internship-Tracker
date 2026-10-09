@@ -1,0 +1,246 @@
+/* ==========================================================================
+   THEME SYSTEM: LIGHT + PREMIUM DARK ART DIRECTION
+   Milan Goswami Engineering Portfolio
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL THEME TRANSITION
+   Smooth 250ms transition for colors, backgrounds, borders, and shadows.
+   -------------------------------------------------------------------------- */
+html {
+  transition: background-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body,
+.reference-hero-section,
+.projects-editorial-section,
+.academic-spatial-section,
+.learning-ecosystem-section,
+.contact-editorial-section,
+.footer-final-scene,
+.navbar-header,
+.tech-stack-ribbon,
+.showcase-monolith-card,
+.milestone-spatial-card,
+.academic-monument-card,
+.evidence-token-card,
+.constellation-card-node,
+.contact-monolith-card,
+.profile-celestial-card,
+.tech-ribbon-card,
+.nav-circle-toggle,
+.theme-toggle-btn {
+  transition: background-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body,
+  * {
+    transition: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. LIGHT THEME (100% Phase 13 Baseline Preserved)
+   -------------------------------------------------------------------------- */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* Canvas & Surfaces */
+  --bg-primary: #F8F9F5;
+  --bg-secondary: #FFFFFF;
+  --bg-alt: #F1F3ED;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-translucent: rgba(255, 255, 255, 0.88);
+  --bg-surface-subtle: rgba(255, 255, 255, 0.65);
+  --bg-input: rgba(0, 0, 0, 0.03);
+
+  /* Typography */
+  --text-main: #141712;
+  --text-secondary: #4A5243;
+  --text-muted: #64748B;
+  --text-faint: #94A3B8;
+  --text-inverse: #FFFFFF;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-main: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+  --border-accent: rgba(16, 185, 129, 0.25);
+
+  /* Shadows */
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+  /* Architectural Grid */
+  --grid-line-color: rgba(0, 0, 0, 0.035);
+  --grid-line-accent: rgba(16, 185, 129, 0.06);
+  --noise-opacity: 0.03;
+
+  /* Atmospheric Radial Blooms */
+  --hero-blob-lime: rgba(148, 236, 44, 0.45);
+  --hero-blob-lime-outer: rgba(188, 252, 105, 0.08);
+  --hero-blob-cyan: rgba(56, 189, 248, 0.22);
+  --canvas-particle-color: rgba(20, 23, 18, 0.35);
+
+  /* Semantic Technology Colors */
+  --accent-lime: #84CC16;
+  --accent-emerald: #10B981;
+  --accent-emerald-text: #065F46;
+  --accent-green-primary: #A4F941;
+  --accent-java-orange: #EA580C;
+  --accent-spring-green: #16A34A;
+  --accent-jpa-teal: #0D9488;
+  --accent-rest-indigo: #4F46E5;
+  --accent-design-violet: #7C3AED;
+  --accent-micro-cyan: #0284C7;
+
+  /* Interactive Elements */
+  --hero-cta-bg: #141712;
+  --hero-cta-text: #FFFFFF;
+  --hero-cta-hover-bg: #000000;
+  --hero-cta-shadow: 0 8px 24px rgba(20, 23, 18, 0.16);
+
+  --btn-primary-bg: #141712;
+  --btn-primary-text: #FFFFFF;
+  --btn-secondary-bg: #FFFFFF;
+  --btn-secondary-text: #141712;
+  --btn-secondary-border: rgba(0, 0, 0, 0.12);
+
+  --badge-bg-default: rgba(0, 0, 0, 0.04);
+  --badge-border-default: rgba(0, 0, 0, 0.08);
+
+  --eyebrow-bg: rgba(164, 249, 65, 0.22);
+  --eyebrow-border: rgba(164, 249, 65, 0.45);
+  --eyebrow-text: #1F5108;
+  --eyebrow-dot: #16A34A;
+
+  --nav-bg: rgba(248, 249, 245, 0.90);
+  --nav-border: rgba(0, 0, 0, 0.06);
+
+  --card-bg: #FFFFFF;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-inner-bg: rgba(0, 0, 0, 0.02);
+
+  /* Trajectory */
+  --trajectory-line: rgba(0, 0, 0, 0.12);
+  --trajectory-photon: #10B981;
+  --trajectory-pill-bg: #FFFFFF;
+  --trajectory-pill-border: rgba(0, 0, 0, 0.1);
+
+  /* Modal Shell */
+  --modal-backdrop: rgba(10, 14, 10, 0.85);
+  --modal-viewport-bg: #121510;
+  --modal-control-bg: #181C15;
+  --modal-border: rgba(255, 255, 255, 0.1);
+  --modal-text: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   3. PREMIUM DARK THEME (Deliberate Architectural Art Direction)
+   Deep charcoal/graphite foundation, luminous accents, high-contrast text.
+   -------------------------------------------------------------------------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Canvas & Elevated Surfaces */
+  --bg-primary: #0C0F0C;
+  --bg-secondary: #131713;
+  --bg-alt: #161B16;
+  --bg-surface: #151A15;
+  --bg-surface-elevated: #1B211B;
+  --bg-surface-translucent: rgba(21, 26, 21, 0.88);
+  --bg-surface-subtle: rgba(27, 33, 27, 0.72);
+  --bg-input: rgba(255, 255, 255, 0.06);
+
+  /* Typography: High-contrast warm off-white and cool grays */
+  --text-main: #F2F5F0;
+  --text-secondary: #B2BBAE;
+  --text-muted: #889484;
+  --text-faint: #606C5D;
+  --text-inverse: #0C0F0C;
+
+  /* Borders & Dividers: Soft cool-gray boundaries */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-main: rgba(255, 255, 255, 0.11);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-accent: rgba(164, 249, 65, 0.35);
+
+  /* Shadows: Deep ambient glow & edge elevation */
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.60);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.75);
+  --shadow-card: 0 12px 36px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.12);
+
+  /* Architectural Grid: Very faint cool-gray lines */
+  --grid-line-color: rgba(255, 255, 255, 0.032);
+  --grid-line-accent: rgba(34, 197, 94, 0.08);
+  --noise-opacity: 0.045;
+
+  /* Atmospheric Radial Blooms (Softer, lighter, diffused emerald & lime in deep graphite) */
+  --hero-blob-lime: rgba(148, 236, 44, 0.12);
+  --hero-blob-lime-outer: rgba(34, 197, 94, 0.025);
+  --hero-blob-cyan: rgba(56, 189, 248, 0.08);
+  --canvas-particle-color: rgba(164, 249, 65, 0.35);
+
+  /* Semantic Technology Accent Colors (Brighter / Luminous for Dark Canvas) */
+  --accent-lime: #A3E635;
+  --accent-emerald: #34D399;
+  --accent-emerald-text: #6EE7B7;
+  --accent-green-primary: #A4F941;
+  --accent-java-orange: #FB923C;
+  --accent-spring-green: #4ADE80;
+  --accent-jpa-teal: #2DD4BF;
+  --accent-rest-indigo: #818CF8;
+  --accent-design-violet: #C084FC;
+  --accent-micro-cyan: #38BDF8;
+
+  /* Interactive Elements: Crisp high-contrast CTA */
+  --hero-cta-bg: #E6F4E2;
+  --hero-cta-text: #0C0F0C;
+  --hero-cta-hover-bg: #FFFFFF;
+  --hero-cta-shadow: 0 8px 28px rgba(164, 249, 65, 0.25), 0 0 14px rgba(255, 255, 255, 0.15);
+
+  --btn-primary-bg: #E6F4E2;
+  --btn-primary-text: #0C0F0C;
+  --btn-secondary-bg: #1B211B;
+  --btn-secondary-text: #F2F5F0;
+  --btn-secondary-border: rgba(255, 255, 255, 0.16);
+
+  --badge-bg-default: rgba(255, 255, 255, 0.06);
+  --badge-border-default: rgba(255, 255, 255, 0.12);
+
+  --eyebrow-bg: rgba(52, 211, 153, 0.14);
+  --eyebrow-border: rgba(52, 211, 153, 0.35);
+  --eyebrow-text: #6EE7B7;
+  --eyebrow-dot: #34D399;
+
+  --nav-bg: rgba(12, 15, 12, 0.90);
+  --nav-border: rgba(255, 255, 255, 0.08);
+
+  --card-bg: #161B16;
+  --card-border: rgba(255, 255, 255, 0.10);
+  --card-inner-bg: rgba(255, 255, 255, 0.035);
+
+  /* Trajectory */
+  --trajectory-line: rgba(255, 255, 255, 0.18);
+  --trajectory-photon: #34D399;
+  --trajectory-pill-bg: #1B211B;
+  --trajectory-pill-border: rgba(255, 255, 255, 0.16);
+
+  /* Modal Shell */
+  --modal-backdrop: rgba(4, 6, 4, 0.92);
+  --modal-viewport-bg: #121612;
+  --modal-control-bg: #171C17;
+  --modal-border: rgba(255, 255, 255, 0.14);
+  --modal-text: #F2F5F0;
+}

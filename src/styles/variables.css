@@ -1,0 +1,47 @@
+@import './themes.css';
+
+:root {
+  /* Common Structural Tokens */
+  --bg-main: var(--bg-primary);
+  --surface-main: var(--bg-surface);
+  
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-serif: var(--font-display);
+  --font-sans-display: 'Plus Jakarta Sans', var(--font-body);
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+
+  /* Spacing */
+  --section-padding: 8rem;
+  --container-width: 1400px;
+  
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Common Gradients */
+  --gradient-hero: radial-gradient(circle at center, var(--accent-green-primary) 0%, var(--accent-lime) 40%, transparent 70%);
+  --gradient-footer: linear-gradient(180deg, transparent 0%, var(--border-accent) 100%);
+  
+  /* Surface Glass Tokens */
+  --surface-frosted: var(--bg-surface-translucent);
+  --surface-frosted-border-top: var(--border-subtle);
+  --surface-frosted-border-bottom: var(--border-main);
+  --surface-frosted-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem;
+  }
+}

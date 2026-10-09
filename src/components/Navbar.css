@@ -1,0 +1,258 @@
+/* Navbar Header matching reference top bar composition */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.75rem 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+}
+
+.navbar-header.header-scrolled {
+  background: var(--nav-bg, rgba(247, 248, 244, 0.88));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm, 0 4px 20px rgba(0, 0, 0, 0.04));
+  border-bottom: 1px solid var(--nav-border, rgba(0, 0, 0, 0.05));
+}
+
+.nav-outer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left: Brand Identity matching reference "Elian Ross" typography */
+.brand-signature {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.brand-italic {
+  font-family: var(--font-display, serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  color: var(--text-main, #141712);
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s ease;
+}
+
+.brand-signature:hover .brand-italic {
+  opacity: 0.8;
+}
+
+
+
+/* Right Controls Cluster: Theme Toggle + Menu */
+.nav-right-cluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 1001;
+}
+
+/* Right: Circular Hamburger Button matching reference */
+.nav-circle-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-surface-translucent, rgba(255, 255, 255, 0.85));
+  border: 1px solid var(--border-main, rgba(0, 0, 0, 0.08));
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.04));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-main, #141712);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1001;
+}
+
+.nav-circle-toggle:hover {
+  background: var(--bg-surface-elevated, #ffffff);
+  border-color: var(--border-strong, rgba(0, 0, 0, 0.2));
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md, 0 4px 14px rgba(0, 0, 0, 0.08));
+}
+
+.nav-circle-toggle:focus-visible {
+  outline: 2px solid var(--accent-emerald, #10B981);
+  outline-offset: 2px;
+}
+
+/* Slide-in Drawer Navigation */
+.nav-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 12, 8, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-drawer-panel {
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background: var(--bg-primary, #FBFBFA);
+  border-left: 1px solid var(--border-main, rgba(0, 0, 0, 0.08));
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.25rem 2rem;
+  overflow-y: auto;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-main, rgba(0, 0, 0, 0.07));
+}
+
+.drawer-brand-italic {
+  font-family: var(--font-display, serif);
+  font-style: italic;
+  font-size: 1.45rem;
+  color: var(--text-main);
+}
+
+.drawer-close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-surface-elevated, rgba(0, 0, 0, 0.04));
+  border: 1px solid var(--border-main, rgba(0, 0, 0, 0.08));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.drawer-close-btn:hover {
+  background: var(--border-subtle);
+  transform: rotate(90deg);
+}
+
+.drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  text-decoration: none;
+  padding: 0.65rem 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.drawer-link:hover {
+  background: var(--badge-bg-default, rgba(164, 249, 65, 0.12));
+  padding-left: 0.85rem;
+}
+
+.drawer-link.link-active {
+  background: var(--border-accent, rgba(164, 249, 65, 0.18));
+}
+
+.link-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-emerald, #10B981);
+}
+
+.link-text {
+  font-family: var(--font-sans-display, var(--font-body));
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.drawer-footer {
+  border-top: 1px solid var(--border-main, rgba(0, 0, 0, 0.07));
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.drawer-theme-preference-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.06));
+}
+
+.drawer-footer-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.drawer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.drawer-social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.drawer-social-links a:hover {
+  color: var(--accent-green-text);
+}
+
+.drawer-email-tag a {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: var(--font-mono, monospace);
+}
+
+.drawer-email-tag a:hover {
+  color: var(--text-main);
+  text-decoration: underline;
+}
+
+
+
+@media (max-width: 768px) {
+  .navbar-header {
+    padding: 1.25rem 0;
+  }
+  .nav-drawer-panel {
+    max-width: 100%;
+  }
+}

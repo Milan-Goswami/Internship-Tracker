@@ -1,0 +1,149 @@
+.techstack-section {
+  padding: 4rem 0 2rem 0;
+  overflow: hidden;
+  background-color: transparent;
+  position: relative;
+}
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.tech-marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+/* Masking edges for a fade effect */
+.tech-marquee-container::before,
+.tech-marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15vw;
+  z-index: 2;
+  pointer-events: none;
+}
+.tech-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary) 0%, transparent 100%);
+}
+.tech-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary) 0%, transparent 100%);
+}
+
+.tech-marquee {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2rem;
+  animation: scrollMarquee 45s linear infinite;
+  animation-play-state: running;
+  padding: 0 1rem;
+}
+
+/* Pause marquee animation ONLY when an actual tech badge item is hovered */
+.tech-marquee:has(.tech-marquee-item:hover) {
+  animation-play-state: paused;
+}
+
+.tech-marquee:has(.tech-marquee-item:hover) .tech-marquee-item:not(:hover) {
+  opacity: 0.7;
+  filter: blur(0.2px);
+}
+
+.tech-marquee-item {
+  display: flex;
+  align-items: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, filter 0.3s ease;
+}
+
+.tech-marquee-item .tech-badge-pill {
+  padding: 0.65rem 1.35rem;
+  font-size: 0.95rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.85));
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  box-shadow: var(--shadow-sm, 0 4px 16px rgba(0, 0, 0, 0.03));
+  color: var(--text-main);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.tech-marquee-item:hover {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.08) translateY(-3px);
+  z-index: 10;
+}
+
+.tech-marquee-item:hover .tech-badge-pill {
+  background: var(--bg-surface-elevated, #FFFFFF);
+  border-color: var(--badge-color);
+  box-shadow: var(--shadow-md, 0 12px 28px rgba(0, 0, 0, 0.08)), 0 0 16px var(--badge-bg);
+}
+
+.tech-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.55rem;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-badge-icon .brand-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tech-marquee-item:hover .tech-badge-icon {
+  transform: scale(1.18) rotate(4deg);
+}
+
+@keyframes scrollMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.3333%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    transform: none !important;
+  }
+  .tech-marquee-container {
+    width: 100%;
+    left: auto;
+    transform: none;
+  }
+  .tech-marquee-container::before,
+  .tech-marquee-container::after {
+    display: none;
+  }
+  .tech-chip {
+    filter: none;
+  }
+  .tech-marquee-container:hover .tech-chip {
+    filter: none;
+  }
+}

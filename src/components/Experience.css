@@ -1,0 +1,896 @@
+/* ======================================================== */
+/* ACADEMIC PROGRESSION - SPATIAL MONUMENT ARCHITECTURE (Phase 12) */
+/* Integrated Trajectory · No Black Capsule · Integrated Evidence Deck */
+/* ======================================================== */
+
+.academic-spatial-section {
+  position: relative;
+  background-color: var(--bg-primary, #F8F9F5);
+  padding: 7.5rem 0 6rem 0;
+  scroll-margin-top: 6rem;
+  overflow: hidden;
+}
+
+/* Background Atmosphere */
+.academic-ambient-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.atmosphere-bloom-bca {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width: 45vw;
+  height: 50vh;
+  max-width: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(164, 249, 65, 0.05) 45%, transparent 70%);
+  filter: blur(80px);
+  animation: bloomDriftBCA 12s infinite ease-in-out alternate;
+}
+
+.atmosphere-bloom-mca {
+  position: absolute;
+  bottom: 12%;
+  right: 8%;
+  width: 45vw;
+  height: 50vh;
+  max-width: 600px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.10) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 70%);
+  filter: blur(85px);
+  animation: bloomDriftMCA 14s infinite ease-in-out alternate;
+}
+
+@keyframes bloomDriftBCA {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(20px, -15px) scale(1.08); }
+}
+
+@keyframes bloomDriftMCA {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-20px, 15px) scale(1.08); }
+}
+
+.academic-coordinates-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.55;
+}
+
+/* Section Header */
+.academic-editorial-header {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto 3.75rem auto;
+}
+
+.academic-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--eyebrow-text, #1F5108);
+  background: var(--eyebrow-bg, rgba(164, 249, 65, 0.22));
+  border: 1px solid var(--eyebrow-border, rgba(164, 249, 65, 0.45));
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  transition: all var(--theme-transition-base);
+}
+
+.kicker-glow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--eyebrow-dot, #16A34A);
+  box-shadow: 0 0 8px var(--eyebrow-dot, #16A34A);
+}
+
+.academic-mission-lead {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--text-muted, #555A4E);
+  max-width: 640px;
+  margin: 0.85rem auto 0 auto;
+}
+
+/* ======================================================== */
+/* INTEGRATED ACADEMIC MONUMENT CARD */
+/* ======================================================== */
+.academic-monument-card {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Horizon: BCA Milestone · Central Trajectory · MCA Milestone */
+.academic-spatial-horizon {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* ======================================================== */
+/* SEAMLESS CENTRAL TRAJECTORY CONNECTOR (Zero Awkward Black Bar) */
+/* ======================================================== */
+.academic-central-trajectory {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 100%;
+  min-height: 140px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.trajectory-flow-svg {
+  width: 100%;
+  height: 64px;
+  overflow: visible;
+}
+
+.trajectory-flow-dash {
+  animation: trajectoryPulseDash 6s linear infinite;
+}
+
+@keyframes trajectoryPulseDash {
+  to { stroke-dashoffset: -120; }
+}
+
+.trajectory-photon-dot {
+  filter: drop-shadow(0 0 6px #A4F941);
+}
+
+.trajectory-waypoint-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06), 0 0 12px rgba(164, 249, 65, 0.15);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  pointer-events: auto;
+  margin-top: -0.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.trajectory-waypoint-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 0 18px rgba(164, 249, 65, 0.28);
+}
+
+.waypoint-pip {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16A34A;
+  box-shadow: 0 0 8px #16A34A;
+}
+
+.waypoint-text {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #047857;
+}
+
+.waypoint-text.text-mca {
+  color: #7C3AED;
+}
+
+.waypoint-arrow {
+  color: var(--accent-green-text, #1F5108);
+}
+
+/* ======================================================== */
+/* MILESTONE CHAMBERS (Luminous, Cohesive Surfaces) */
+/* ======================================================== */
+.academic-milestone-chamber {
+  position: relative;
+  background: var(--card-bg, rgba(255, 255, 255, 0.88));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  border-radius: 26px;
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card, 0 12px 36px rgba(0, 0, 0, 0.04));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  overflow: hidden;
+}
+
+.academic-milestone-chamber:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Top Accent Highlight Line */
+.milestone-accent-border {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  transition: height 0.3s ease, left 0.3s ease, right 0.3s ease;
+}
+
+.border-bca {
+  background: linear-gradient(90deg, transparent, var(--accent-emerald, #10B981), transparent);
+}
+
+.border-mca {
+  background: linear-gradient(90deg, transparent, var(--accent-design-violet, #8B5CF6), transparent);
+}
+
+.academic-milestone-chamber:hover .milestone-accent-border {
+  left: 5%;
+  right: 5%;
+  height: 4px;
+}
+
+/* Monogram Watermark */
+.milestone-monogram-watermark {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-family: var(--font-display, serif);
+  font-style: italic;
+  font-size: 6.8rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.05;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.watermark-bca { color: #10B981; }
+.watermark-mca { color: #8B5CF6; }
+
+.academic-milestone-chamber:hover .milestone-monogram-watermark {
+  opacity: 0.09;
+  transform: translateY(-3px);
+}
+
+/* Milestone Anchor Header */
+.milestone-anchor-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.milestone-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.milestone-stage-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.tag-bca { color: #047857; }
+.tag-mca { color: #6D28D9; }
+
+/* Status Pills */
+.bca-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #047857;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.pill-check { color: #047857; }
+
+.mca-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #15803D;
+  background: rgba(164, 249, 65, 0.22);
+  border: 1px solid rgba(164, 249, 65, 0.5);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.mca-pulse-beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16A34A;
+  box-shadow: 0 0 10px #16A34A;
+  animation: beaconPing 2s infinite ease-in-out;
+}
+
+@keyframes beaconPing {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.7); opacity: 0.5; }
+}
+
+.bca-period-display,
+.mca-period-display {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main, #141712);
+}
+
+/* ======================================================== */
+/* APPARATUS 01: BCA ROTATING ACADEMIC SEAL */
+/* ======================================================== */
+.bca-seal-apparatus {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  flex-shrink: 0;
+}
+
+.bca-seal-orbit-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(16, 185, 129, 0.45);
+  animation: sealOrbit 24s linear infinite;
+}
+
+@keyframes sealOrbit {
+  to { transform: rotate(360deg); }
+}
+
+.bca-seal-medallion {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #10B981;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.16);
+  transition: transform 0.3s ease;
+}
+
+.milestone-bca:hover .bca-seal-medallion {
+  transform: scale(1.05);
+}
+
+.bca-seal-cap {
+  color: #10B981;
+  margin-bottom: 2px;
+}
+
+.bca-seal-monogram {
+  font-family: var(--font-display, serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #047857;
+}
+
+/* ======================================================== */
+/* APPARATUS 02: MCA TRIPLE CONCENTRIC RESONANCE NEXUS */
+/* ======================================================== */
+.mca-nexus-apparatus {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mca-resonance-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(139, 92, 246, 0.35);
+  pointer-events: none;
+  animation: mcaPulseRing 4s infinite ease-in-out;
+}
+
+.mca-resonance-ring.ring-1 {
+  inset: -6px;
+  animation-delay: 0s;
+}
+
+.mca-resonance-ring.ring-2 {
+  inset: -12px;
+  border-color: rgba(99, 102, 241, 0.22);
+  animation-delay: 1.2s;
+}
+
+.mca-resonance-ring.ring-3 {
+  inset: -18px;
+  border-color: rgba(164, 249, 65, 0.25);
+  animation-delay: 2.4s;
+}
+
+@keyframes mcaPulseRing {
+  0%, 100% { transform: scale(1); opacity: 0.45; }
+  50% { transform: scale(1.06); opacity: 0.9; }
+}
+
+.mca-nexus-core {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #8B5CF6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.18), 0 0 16px rgba(139, 92, 246, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.milestone-mca:hover .mca-nexus-core {
+  transform: scale(1.05);
+}
+
+.mca-spark-icon {
+  color: #8B5CF6;
+  margin-bottom: 2px;
+}
+
+.mca-nexus-monogram {
+  font-family: var(--font-display, serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #6D28D9;
+}
+
+/* ======================================================== */
+/* MILESTONE CORE TYPOGRAPHY & SUMMARY CAPSULES */
+/* ======================================================== */
+.milestone-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.milestone-degree-title {
+  font-family: var(--font-display, serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-main, #141712);
+}
+
+.milestone-institution-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.inst-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main, #141712);
+}
+
+.inst-affil {
+  font-size: 0.85rem;
+  color: var(--text-muted, #64748B);
+}
+
+/* Summary Capsules */
+.milestone-summary-capsules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.summary-pill {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-main, #141712);
+  background: var(--badge-bg-default, rgba(0, 0, 0, 0.04));
+  border: 1px solid var(--badge-border-default, rgba(0, 0, 0, 0.07));
+  padding: 0.32rem 0.75rem;
+  border-radius: 9999px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.summary-pill:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-emerald, rgba(16, 185, 129, 0.4));
+}
+
+.summary-pill.pill-violet:hover {
+  border-color: var(--accent-design-violet, rgba(139, 92, 246, 0.4));
+}
+
+/* Hover States */
+.milestone-bca:hover {
+  border-color: var(--accent-emerald, rgba(16, 185, 129, 0.35));
+  box-shadow: 0 20px 48px rgba(16, 185, 129, 0.08);
+}
+
+.milestone-mca:hover {
+  border-color: var(--accent-design-violet, rgba(139, 92, 246, 0.35));
+  box-shadow: 0 20px 48px rgba(139, 92, 246, 0.08);
+}
+
+/* Dark Theme Medallions & Status Overrides */
+[data-theme="dark"] .bca-seal-medallion {
+  background: #182218;
+  border-color: #34D399;
+  box-shadow: 0 4px 16px rgba(52, 211, 153, 0.22);
+}
+
+[data-theme="dark"] .bca-seal-monogram {
+  color: #6EE7B7;
+}
+
+[data-theme="dark"] .bca-seal-cap {
+  color: #34D399;
+}
+
+[data-theme="dark"] .mca-nexus-core {
+  background: #20182C;
+  border-color: #A855F7;
+  box-shadow: 0 4px 16px rgba(168, 85, 247, 0.22);
+}
+
+[data-theme="dark"] .mca-nexus-monogram {
+  color: #D8B4FE;
+}
+
+[data-theme="dark"] .mca-spark-icon {
+  color: #A855F7;
+}
+
+[data-theme="dark"] .bca-status-pill {
+  background: rgba(52, 211, 153, 0.15);
+  border-color: rgba(52, 211, 153, 0.35);
+  color: #6EE7B7;
+}
+
+[data-theme="dark"] .mca-status-pill {
+  background: rgba(164, 249, 65, 0.15);
+  border-color: rgba(164, 249, 65, 0.4);
+  color: #A3E635;
+}
+
+/* ======================================================== */
+/* INTEGRATED ACADEMIC EVIDENCE DECK (Directly Docked) */
+/* ======================================================== */
+.academic-evidence-deck {
+  position: relative;
+  z-index: 1;
+  margin-top: 2.25rem;
+  padding: 1.6rem 2rem;
+  background: var(--bg-surface-subtle, rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-main, rgba(0, 0, 0, 0.07));
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm, 0 8px 24px rgba(0, 0, 0, 0.02));
+}
+
+.evidence-deck-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #64748B);
+}
+
+.evidence-header-main {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.evidence-award-icon {
+  color: var(--accent-spring-green, #16A34A);
+}
+
+.evidence-click-hint {
+  font-size: 0.68rem;
+  color: var(--accent-emerald, #10B981);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.evidence-chips-cluster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+@media (min-width: 1150px) {
+  .evidence-chips-cluster {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.evidence-token-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--card-bg, #FFFFFF);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  border-radius: 14px;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 3px 10px rgba(0, 0, 0, 0.03));
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.evidence-token-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--token-accent-light, transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.evidence-token-card:hover,
+.evidence-token-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--token-accent, rgba(0, 0, 0, 0.2));
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 0 16px var(--token-accent-light, transparent);
+  outline: none;
+}
+
+.evidence-token-card:hover::before,
+.evidence-token-card:focus-visible::before {
+  opacity: 1;
+}
+
+/* Micro Thumbnail Chassis */
+.token-thumb-chassis {
+  position: relative;
+  width: 46px;
+  height: 34px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #141712;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.token-micro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.token-thumb-lens {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 185, 129, 0.75);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.evidence-token-card:hover .token-thumb-lens,
+.evidence-token-card:focus-visible .token-thumb-lens {
+  opacity: 1;
+}
+
+.evidence-token-card:hover .token-micro-img {
+  transform: scale(1.15);
+}
+
+.token-body-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.token-top-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 2px;
+}
+
+.chip-pip {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chip-type {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.token-id-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.58rem;
+  color: #047857;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.chip-name {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main, #141712);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.25;
+}
+
+.chip-issuer {
+  font-size: 0.72rem;
+  color: var(--text-muted, #64748B);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}
+
+/* ======================================================== */
+/* RESPONSIVE DESIGN FOR ALL 7 VIEWPORTS */
+/* ======================================================== */
+@media (max-width: 1080px) {
+  .academic-spatial-horizon {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .academic-central-trajectory {
+    width: 100%;
+    min-height: auto;
+    height: 50px;
+    flex-direction: row;
+    gap: 1rem;
+    margin: -0.5rem 0;
+  }
+
+  .trajectory-flow-svg {
+    display: none;
+  }
+
+  .trajectory-waypoint-pill {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .academic-spatial-section {
+    padding: 5.5rem 0 4.5rem 0;
+  }
+
+  .academic-milestone-chamber {
+    padding: 2rem 1.6rem;
+    border-radius: 20px;
+  }
+
+  .milestone-anchor-header {
+    gap: 1.15rem;
+  }
+
+  .bca-seal-apparatus,
+  .mca-nexus-apparatus {
+    width: 68px;
+    height: 68px;
+  }
+
+  .milestone-degree-title {
+    font-size: 1.4rem;
+  }
+
+  .milestone-monogram-watermark {
+    font-size: 5rem;
+    right: 15px;
+  }
+
+  .academic-evidence-deck {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .bca-seal-orbit-ring,
+  .mca-resonance-ring,
+  .trajectory-flow-dash,
+  .mca-pulse-beacon,
+  .atmosphere-bloom-bca,
+  .atmosphere-bloom-mca {
+    animation: none !important;
+  }
+  
+  .trajectory-photon-dot {
+    display: none !important;
+  }
+}
