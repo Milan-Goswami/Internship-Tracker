@@ -38,6 +38,7 @@ Thumbs.db
 *.sw?
 
 # Temporary Test Scripts & Audit Artifacts
+scratch/
 audit_screenshots/
 audit_results*.json
 audit_report_printable.html

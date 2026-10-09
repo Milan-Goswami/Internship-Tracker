@@ -233,5 +233,44 @@ export const techMeta = {
         <path d="M7 16l8-8m0 0h-5m5 0v5" stroke="#FF6C37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     )
+  },
+  'Spring MVC': {
+    color: '#6DB33F',
+    bg: 'rgba(109, 179, 63, 0.14)',
+    border: 'rgba(109, 179, 63, 0.38)',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="brand-svg" aria-hidden="true">
+        {/* Spring MVC web controller leaf architecture */}
+        <path d="M12 2L3.5 7v10L12 22l8.5-5V7L12 2z" stroke="#6DB33F" strokeWidth="1.6" fill="rgba(109, 179, 63, 0.15)" />
+        <path d="M8 12h8M12 8l4 4-4 4" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+  },
+  'JDBC': {
+    color: '#0284C7',
+    bg: 'rgba(2, 132, 199, 0.14)',
+    border: 'rgba(2, 132, 199, 0.38)',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="brand-svg" aria-hidden="true">
+        {/* JDBC SQL Relational Database Pipeline */}
+        <ellipse cx="12" cy="5" rx="8" ry="3" stroke="#0284C7" strokeWidth="1.8" fill="rgba(2, 132, 199, 0.2)" />
+        <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" stroke="#0284C7" strokeWidth="1.8" />
+        <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" stroke="#0284C7" strokeWidth="1.8" />
+        <circle cx="12" cy="18" r="1.5" fill="#E76F00" />
+      </svg>
+    )
+  },
+  'Firebase': {
+    color: '#FFA000',
+    bg: 'rgba(255, 160, 0, 0.14)',
+    border: 'rgba(255, 160, 0, 0.38)',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="brand-svg" aria-hidden="true">
+        {/* Firebase geometric flame emblem */}
+        <path d="M4.5 16.5L7 3.5l4.5 8L4.5 16.5z" fill="#FFA000" fillOpacity="0.8" />
+        <path d="M19.5 16.5L16 6l-4.5 5.5 8 5z" fill="#F57C00" />
+        <path d="M4.5 16.5L12 21l7.5-4.5-8-5-7 5z" fill="#FFCA28" />
+      </svg>
+    )
   }
 };

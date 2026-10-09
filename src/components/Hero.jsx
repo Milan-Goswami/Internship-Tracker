@@ -176,12 +176,12 @@ export default function Hero() {
       const gsapCtx = gsap.context(() => {
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-        tl.from('.ref-headline-group', { y: 35, opacity: 0, duration: 0.9 })
-          .from(portraitRef.current, { y: 45, opacity: 0, scale: 0.98, duration: 1.0 }, '-=0.6')
-          .from('.ref-pill-left', { x: -25, opacity: 0, duration: 0.7 }, '-=0.5')
-          .from('.ref-copy-right', { x: 25, opacity: 0, duration: 0.7 }, '-=0.7')
-          .from('.ref-badge-bottom-left', { y: 20, opacity: 0, duration: 0.6 }, '-=0.5')
-          .from('.ref-cta-bottom-right', { y: 20, opacity: 0, duration: 0.6 }, '-=0.6');
+        tl.from('.ref-headline-group', { y: 35, opacity: 0, duration: 0.9, clearProps: 'transform' })
+          .from(portraitRef.current, { y: 45, opacity: 0, scale: 0.98, duration: 1.0, clearProps: 'transform' }, '-=0.6')
+          .from('.ref-pill-left', { x: -25, opacity: 0, duration: 0.7, clearProps: 'transform' }, '-=0.5')
+          .from('.ref-copy-right', { x: 25, opacity: 0, duration: 0.7, clearProps: 'transform' }, '-=0.7')
+          .from('.ref-badge-bottom-left', { y: 20, opacity: 0, duration: 0.6, clearProps: 'transform' }, '-=0.5')
+          .from('.ref-cta-bottom-right', { y: 20, opacity: 0, duration: 0.6, clearProps: 'transform' }, '-=0.6');
       }, heroRef);
 
       return () => {
@@ -263,12 +263,12 @@ export default function Hero() {
                 <path d="M12 2L3.5 7v10L12 22l8.5-5V7L12 2z" stroke="#6DB33F" strokeWidth="1.6" fill="#6DB33F" />
               </svg>
             </span>
-            <span className="avatar-disc avatar-edu" title="MCA @ DPU">
+            <span className="avatar-disc avatar-edu" title="MCA Candidate">
               <GraduationCap size={14} className="mini-edu-icon" />
             </span>
           </div>
           <div className="ref-trust-text">
-            <strong>MCA @ Dr. D. Y. Patil</strong> &amp; BCA Graduate. Focused on high-performance Java backends &amp; relational data.
+            <strong>MCA Candidate</strong> &amp; BCA Graduate. Focused on building reliable Java backend applications and working with relational databases.
           </div>
         </div>
 

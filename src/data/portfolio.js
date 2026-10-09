@@ -11,9 +11,9 @@ export const portfolioData = {
     about: "I'm an MCA student with hands-on experience across Java, web development, Flutter, databases, and application development."
   },
   skills: [
-    "Java", "Spring Boot", "Spring Data JPA", "Hibernate/JPA", "REST APIs",
-    "MySQL", "JSP", "Servlets", "J2EE", "Maven", "Git/GitHub", "React",
-    "JavaScript", "HTML/CSS", "Postman"
+    "Java", "Spring Boot", "Spring MVC", "Spring Data JPA", "Hibernate/JPA",
+    "REST APIs", "MySQL", "JDBC", "JSP", "Servlets",
+    "J2EE", "Maven", "Git/GitHub", "Firebase", "Postman"
   ],
   learning: [
     "Spring Boot",
@@ -27,20 +27,6 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      name: "Nova Online Examination System",
-      description: "A Java-based web application for conducting online examinations using JSP/Servlets, MySQL, and Apache Tomcat.",
-      technologies: ["Java", "JSP", "Servlets", "MySQL", "Maven", "HTML", "CSS", "JavaScript"],
-      links: { github: "https://github.com/Milan-Goswami/NovaOnlineExamSystem" },
-      media: {
-        type: "image",
-        primary: "/assets/nova-dashboard.png",
-        gallery: ["/assets/nova-dashboard.png", "/assets/nova-home.png", "/assets/nova-exam-interface.png"],
-        poster: null,
-        technicalType: "code"
-      }
-    },
-    {
-      id: 2,
       name: "Insurance Management System",
       description: "A full-stack J2EE web application with an admin dashboard for managing policies, customers, and claims.",
       technologies: ["Java", "JSP", "Servlets", "MySQL", "JDBC"],
@@ -51,6 +37,20 @@ export const portfolioData = {
         gallery: ["/assets/insurance-dashboard.png", "/assets/insurance-customers.png"],
         poster: null,
         technicalType: "schema"
+      }
+    },
+    {
+      id: 2,
+      name: "Nova Online Examination System",
+      description: "A Java-based web application for conducting online examinations using JSP/Servlets, MySQL, and Apache Tomcat.",
+      technologies: ["Java", "JSP", "Servlets", "MySQL", "Maven", "HTML", "CSS", "JavaScript"],
+      links: { github: "https://github.com/Milan-Goswami/NovaOnlineExamSystem" },
+      media: {
+        type: "image",
+        primary: "/assets/nova-dashboard.png",
+        gallery: ["/assets/nova-dashboard.png", "/assets/nova-home.png", "/assets/nova-exam-interface.png"],
+        poster: null,
+        technicalType: "code"
       }
     }
   ],

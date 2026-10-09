@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Copy, Check, ArrowUp, ArrowUpRight, Terminal, MapPin } from 'lucide-react';
+import { Copy, Check, ArrowUp, ArrowUpRight, MapPin } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 import './Footer.css';
 
@@ -134,11 +134,6 @@ export default function Footer() {
                 <span className="ist-live-ping" aria-hidden="true"></span>
                 <span>IST (UTC+5:30){istTime && ` \u00B7 ${istTime}`}</span>
               </div>
-
-              <div className="telemetry-badge-runtime">
-                <Terminal size={12} className="runtime-icon" aria-hidden="true" />
-                <span>STACK // JAVA 17+ &middot; SPRING 3.x &middot; MYSQL</span>
-              </div>
             </div>
 
             {/* Direct Email Action Capsule */}
@@ -198,7 +193,7 @@ export default function Footer() {
                     <span className="node-dot dot-github"></span>
                   </div>
                   <span className="node-handle">@Milan-Goswami</span>
-                  <span className="node-caption">Open Source Repositories &middot; 4+ Systems</span>
+                  <span className="node-caption">Software Repositories &middot; Source Code</span>
                 </div>
                 <ArrowUpRight size={15} className="node-arrow" aria-hidden="true" />
               </a>
@@ -250,7 +245,7 @@ export default function Footer() {
                     <strong className="node-platform">LeetCode</strong>
                     <span className="node-dot dot-leetcode"></span>
                   </div>
-                  <span className="node-handle">100+ Solved</span>
+                  <span className="node-handle">@pro_milan</span>
                   <span className="node-caption">Algorithms in Java &middot; Data Structures</span>
                 </div>
                 <ArrowUpRight size={15} className="node-arrow" aria-hidden="true" />
@@ -276,9 +271,6 @@ export default function Footer() {
           <div className="footer-colophon-middle">
             <span className="colophon-copyright">
               &copy; {CURRENT_YEAR} Milan Goswami. All rights reserved.
-            </span>
-            <span className="colophon-manifesto">
-              Crafted for high performance &amp; scalable software systems.
             </span>
           </div>
 

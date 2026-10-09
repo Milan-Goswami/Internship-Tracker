@@ -2,6 +2,7 @@
 .reference-hero-section {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   background-color: var(--bg-primary, #F8F9F5);
   overflow: hidden;
@@ -9,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6.5rem 0 2rem 0;
+  padding: clamp(5rem, 8vh, 6.5rem) 0 clamp(1.5rem, 3vh, 2rem) 0;
 }
 
 /* Layer 1: Living Ambient Canvas with Breathing Lime Atmosphere */
@@ -90,10 +91,22 @@
   width: 100%;
   max-width: 1400px;
   min-height: calc(100vh - 8.5rem);
+  min-height: calc(100dvh - 8.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (min-width: 901px) {
+  .reference-hero-section {
+    min-height: clamp(620px, 100vh, 920px);
+    max-height: 940px;
+  }
+  .ref-hero-stage {
+    min-height: clamp(540px, calc(100vh - 8.5rem), 780px);
+    max-height: 800px;
+  }
 }
 
 /* Top Headline Composition matching reference hierarchy */
@@ -101,7 +114,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: clamp(0.75rem, 2vh, 1.5rem);
 }
 
 .ref-display-title {
@@ -131,11 +144,14 @@
 }
 
 /* Central Portrait Composition layered directly with headline */
+/* Intrinsic horizontal centering via margin-inline: auto prevents transform drift on resize/zoom */
 .ref-portrait-container {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
   z-index: 3;
   display: flex;
   align-items: flex-end;
@@ -159,9 +175,8 @@
 }
 
 .ref-portrait-img {
-  height: 56vh;
-  max-height: 530px;
-  min-height: 380px;
+  height: clamp(340px, 54vh, 520px);
+  max-height: 520px;
   width: auto;
   object-fit: contain;
   object-position: bottom center;
@@ -173,7 +188,7 @@
 /* Floating Mid-Left Pill matching reference */
 .ref-pill-left {
   position: absolute;
-  left: 2rem;
+  left: clamp(1.25rem, 2.5vw, 2rem);
   top: 50%;
   transform: translateY(-50%);
   z-index: 4;
@@ -181,12 +196,13 @@
   border: 1px solid var(--border-main, rgba(0, 0, 0, 0.08));
   box-shadow: var(--shadow-sm, 0 8px 24px rgba(0, 0, 0, 0.06));
   border-radius: 9999px;
-  padding: 0.65rem 1.4rem;
+  padding: 0.65rem clamp(1rem, 1.4vw, 1.4rem);
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  max-width: min(300px, calc(50% - 210px));
 }
 
 .ref-pill-pulse-dot {
@@ -206,7 +222,7 @@
 
 .ref-pill-text {
   font-family: var(--font-body, sans-serif);
-  font-size: 0.9rem;
+  font-size: clamp(0.82rem, 0.95vw, 0.9rem);
   font-weight: 500;
   color: var(--text-main, #1A1D16);
   white-space: nowrap;
@@ -215,17 +231,17 @@
 /* Floating Mid-Right Editorial Copy matching reference */
 .ref-copy-right {
   position: absolute;
-  right: 2rem;
+  right: clamp(1.25rem, 2.5vw, 2rem);
   top: 50%;
   transform: translateY(-50%);
   z-index: 4;
-  max-width: 260px;
+  max-width: clamp(210px, 20vw, 260px);
   text-align: left;
 }
 
 .ref-statement-text {
   font-family: var(--font-body, sans-serif);
-  font-size: 0.96rem;
+  font-size: clamp(0.85rem, 1vw, 0.96rem);
   line-height: 1.5;
   color: var(--text-secondary, #242820);
   margin: 0;
@@ -234,18 +250,19 @@
 /* Floating Bottom-Left Trust Proof matching reference avatar cluster */
 .ref-badge-bottom-left {
   position: absolute;
-  left: 2rem;
-  bottom: 1.5rem;
+  left: clamp(1.25rem, 2.5vw, 2rem);
+  bottom: clamp(1.2rem, 2.5vh, 1.5rem);
   z-index: 4;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  max-width: 380px;
+  gap: clamp(0.6rem, 1vw, 0.85rem);
+  max-width: min(380px, calc(50% - 190px));
 }
 
 .ref-avatar-stack {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .avatar-disc {
@@ -268,7 +285,7 @@
 
 .ref-trust-text {
   font-family: var(--font-body, sans-serif);
-  font-size: 0.78rem;
+  font-size: clamp(0.72rem, 0.85vw, 0.78rem);
   line-height: 1.35;
   color: var(--text-muted, #555A4E);
 }
@@ -280,8 +297,8 @@
 /* Floating Bottom-Right Primary CTA Button matching reference */
 .ref-cta-bottom-right {
   position: absolute;
-  right: 2rem;
-  bottom: 1.5rem;
+  right: clamp(1.25rem, 2.5vw, 2rem);
+  bottom: clamp(1.2rem, 2.5vh, 1.5rem);
   z-index: 4;
 }
 
@@ -290,16 +307,17 @@
   color: var(--hero-cta-text, #FFFFFF);
   border: 1px solid var(--border-accent, rgba(164, 249, 65, 0.45));
   border-radius: 9999px;
-  padding: 0.85rem 1.85rem;
+  padding: 0.85rem clamp(1.4rem, 1.8vw, 1.85rem);
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
   font-family: var(--font-body, sans-serif);
-  font-size: 0.92rem;
+  font-size: clamp(0.84rem, 0.95vw, 0.92rem);
   font-weight: 600;
   cursor: pointer;
   box-shadow: var(--hero-cta-shadow, 0 6px 22px rgba(0, 0, 0, 0.18));
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
 }
 
 .ref-view-resume-btn:hover {
@@ -343,54 +361,74 @@
 }
 
 /* ======================================================== */
-/* RESPONSIVE DESIGN ADAPTATION FOR ALL 7 VIEWPORTS */
-/* 1536×776, 1440×900, 1280×800, 1024×768, 768×1024, 390×844, 375×667 */
+/* RESPONSIVE DESIGN ADAPTATION FOR LAPTOPS, TABLETS & MOBILE */
+/* Supports 1920, 1536, 1440, 1366, 1280, 1024, 768, 430, 390, 375, 360 */
+/* and all zoom levels from 50% to 175% */
 /* ======================================================== */
 
-@media (max-width: 1280px) {
-  .ref-pill-left {
-    left: 1.5rem;
+/* Laptop & Scaled Viewport Fine-Tuning (901px - 1366px) */
+@media (max-width: 1366px) and (min-width: 901px) {
+  .ref-portrait-img {
+    height: clamp(320px, 50vh, 460px);
   }
-  .ref-copy-right {
-    right: 1.5rem;
-    max-width: 220px;
-  }
+
   .ref-badge-bottom-left {
-    left: 1.5rem;
-  }
-  .ref-cta-bottom-right {
-    right: 1.5rem;
+    max-width: min(340px, calc(50% - 170px));
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) and (min-width: 901px) {
+  .ref-portrait-img {
+    height: clamp(300px, 46vh, 410px);
+  }
+
+  .ref-badge-bottom-left {
+    max-width: min(290px, calc(50% - 150px));
+  }
+
+  .ref-copy-right {
+    max-width: clamp(190px, 18vw, 230px);
+  }
+
+  .ref-pill-left {
+    max-width: min(260px, calc(50% - 150px));
+  }
+}
+
+/* Tablet & Mobile Stacked Flow (<= 900px) */
+@media (max-width: 900px) {
   .reference-hero-section {
     min-height: auto;
-    padding: 7rem 0 3.5rem 0;
+    max-height: none;
+    padding: clamp(5.5rem, 10vh, 7rem) 0 3.5rem 0;
   }
 
   .ref-hero-stage {
     min-height: auto;
-    gap: 2rem;
+    max-height: none;
+    gap: 1.75rem;
   }
 
   .ref-portrait-container {
     position: relative;
     bottom: auto;
     left: auto;
-    transform: none;
-    margin: 1rem 0;
+    right: auto;
+    margin: 0.5rem auto;
+    width: auto;
   }
 
   .ref-portrait-img {
-    height: 45vh;
-    max-height: 420px;
+    height: 42vh;
+    max-height: 400px;
+    min-height: 280px;
   }
 
   .ref-pill-left {
     position: static;
     transform: none;
-    margin: 0.5rem auto;
+    margin: 0 auto;
+    max-width: 90%;
   }
 
   .ref-copy-right {
@@ -398,7 +436,7 @@
     transform: none;
     max-width: 480px;
     text-align: center;
-    margin: 0.5rem auto;
+    margin: 0 auto;
   }
 
   .ref-badge-bottom-left {
@@ -406,12 +444,12 @@
     max-width: 100%;
     justify-content: center;
     text-align: center;
-    margin-top: 1rem;
+    margin: 0.5rem auto 0 auto;
   }
 
   .ref-cta-bottom-right {
     position: static;
-    margin-top: 1rem;
+    margin: 0.5rem auto 0 auto;
   }
 }
 
@@ -453,7 +491,7 @@
     padding: 0 1rem;
   }
 
-  .ref-get-in-touch-btn {
+  .ref-view-resume-btn {
     width: 100%;
     max-width: 320px;
     justify-content: center;

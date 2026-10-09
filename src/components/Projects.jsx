@@ -1,48 +1,13 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Maximize2, X, ChevronLeft, ChevronRight, Layers, ShieldCheck, CheckCircle2, Lock } from 'lucide-react';
+import { ArrowUpRight, Maximize2, X, ChevronLeft, ChevronRight, Layers, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { TechBadge } from './TechIcons';
 import './Projects.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projectsList = [
-  {
-    id: 'nova',
-    name: 'Nova Online Examination System',
-    typeBadge: 'SHIPPED JAVA WEB APPLICATION',
-    themeAccent: '#10B981',
-    themeGlow: 'rgba(16, 185, 129, 0.18)',
-    tagline: 'High-Throughput Assessment Engine',
-    leadHeadline: 'Java web platform with automated scoring & strict role authorization.',
-    summary: 'Architected with MVC JSP/Servlets and Apache Tomcat 9. Features teacher/student role separation, dynamic question bank management, and real-time timed test session enforcement.',
-    highlights: [
-      'Role-Based Access Control (Teacher vs Student Separation)',
-      'Automated Scoring Engine with Immediate Grading Feedback',
-      'Session State & Countdown Enforcement on Tomcat 9'
-    ],
-    url: 'http://localhost:8080/nova-exam-system',
-    repoUrl: 'https://github.com/Milan-Goswami/NovaOnlineExamSystem',
-    keyStack: ['Java', 'JSP & Servlets', 'MySQL', 'Apache Tomcat', 'Maven'],
-    screens: [
-      {
-        title: 'Question & Exam Management',
-        src: '/assets/nova-dashboard.png',
-        desc: 'Administrative hub for test creation, question CRUD, and exam scheduling.'
-      },
-      {
-        title: 'Live Timed Exam Interface',
-        src: '/assets/nova-exam-interface.png',
-        desc: 'Real-time student test session with active countdown enforcement and automated scoring.'
-      },
-      {
-        title: 'Security & Access Portal',
-        src: '/assets/nova-home.png',
-        desc: 'Role-based authentication gateway separating student testing from teacher controls.'
-      }
-    ]
-  },
   {
     id: 'insurance',
     name: 'Insurance Management System',
@@ -57,7 +22,6 @@ const projectsList = [
       'ACID-Bound JDBC Transactions Preventing Data Orphans',
       'Customer KYC Directory with Policy & Claims History'
     ],
-    url: 'http://localhost:8080/insurance-system',
     repoUrl: 'https://github.com/Milan-Goswami/Insurance-Management-System',
     keyStack: ['Java', 'J2EE Servlets', 'MySQL', 'JDBC ACID', 'Tomcat'],
     screens: [
@@ -77,18 +41,52 @@ const projectsList = [
         desc: 'Policy enrollment and premium calculation with database transaction enforcement.'
       }
     ]
+  },
+  {
+    id: 'nova',
+    name: 'Nova Online Examination System',
+    typeBadge: 'SHIPPED JAVA WEB APPLICATION',
+    themeAccent: '#10B981',
+    themeGlow: 'rgba(16, 185, 129, 0.18)',
+    tagline: 'High-Throughput Assessment Engine',
+    leadHeadline: 'Java web platform with automated scoring & strict role authorization.',
+    summary: 'Architected with MVC JSP/Servlets and Apache Tomcat 9. Features teacher/student role separation, dynamic question bank management, and real-time timed test session enforcement.',
+    highlights: [
+      'Role-Based Access Control (Teacher vs Student Separation)',
+      'Automated Scoring Engine with Immediate Grading Feedback',
+      'Session State & Countdown Enforcement on Tomcat 9'
+    ],
+    repoUrl: 'https://github.com/Milan-Goswami/NovaOnlineExamSystem',
+    keyStack: ['Java', 'JSP & Servlets', 'MySQL', 'Apache Tomcat', 'Maven'],
+    screens: [
+      {
+        title: 'Question & Exam Management',
+        src: '/assets/nova-dashboard.png',
+        desc: 'Administrative hub for test creation, question CRUD, and exam scheduling.'
+      },
+      {
+        title: 'Live Timed Exam Interface',
+        src: '/assets/nova-exam-interface.png',
+        desc: 'Real-time student test session with active countdown enforcement and automated scoring.'
+      },
+      {
+        title: 'Security & Access Portal',
+        src: '/assets/nova-home.png',
+        desc: 'Role-based authentication gateway separating student testing from teacher controls.'
+      }
+    ]
   }
 ];
 
 export default function Projects() {
   const sectionRef = useRef(null);
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
-  const [screenIndices, setScreenIndices] = useState({ nova: 0, insurance: 0 });
+  const [screenIndices, setScreenIndices] = useState({ insurance: 0, nova: 0 });
 
   // Lightbox Modal state
   const [lightbox, setLightbox] = useState({
     isOpen: false,
-    projectId: 'nova',
+    projectId: 'insurance',
     screenIndex: 0
   });
 
@@ -207,7 +205,7 @@ export default function Projects() {
           }}
         >
           
-          {/* Top Bar: Category Pill & Live Localhost URL */}
+          {/* Top Bar: Category Pill & Project Tagline */}
           <div className="stage-top-bar">
             <div className="stage-meta-left">
               <span className="stage-type-badge">
@@ -215,12 +213,6 @@ export default function Projects() {
                 {activeProject.typeBadge}
               </span>
               <span className="stage-tagline-text">{activeProject.tagline}</span>
-            </div>
-            <div className="stage-meta-right">
-              <span className="stage-url-indicator">
-                <span className="url-dot"></span>
-                {activeProject.url}
-              </span>
             </div>
           </div>
 
@@ -291,11 +283,6 @@ export default function Projects() {
                     <span className="dot red"></span>
                     <span className="dot yellow"></span>
                     <span className="dot green"></span>
-                  </div>
-
-                  <div className="chrome-address-pill">
-                    <Lock size={11} className="lock-icon" aria-hidden="true" />
-                    <span className="address-text">{activeProject.url}</span>
                   </div>
 
                   <button
