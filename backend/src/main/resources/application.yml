@@ -1,5 +1,6 @@
 server:
   port: ${PORT:8080}
+  forward-headers-strategy: framework
   servlet:
     context-path: /
 
@@ -11,6 +12,15 @@ spring:
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:}
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      connection-timeout: 20000
+      max-lifetime: 1800000
+  sql:
+    init:
+      mode: always
   jpa:
     hibernate:
       ddl-auto: none
@@ -18,10 +28,39 @@ spring:
     show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+
+security:
+  jwt:
+    secret: ${JWT_SECRET_KEY:}
+    access-token-expiration-ms: ${JWT_ACCESS_TOKEN_EXPIRATION_MS:900000}
+  cookie:
+    secure: ${COOKIE_SECURE:false}
+
+ratelimit:
+  login:
+    account:
+      capacity: ${RATELIMIT_LOGIN_ACCOUNT_CAPACITY:5}
+      refill-minutes: ${RATELIMIT_LOGIN_ACCOUNT_REFILL_MINUTES:15}
+    ip:
+      capacity: ${RATELIMIT_LOGIN_IP_CAPACITY:10}
+      refill-minutes: ${RATELIMIT_LOGIN_IP_REFILL_MINUTES:10}
+  register:
+    ip:
+      capacity: ${RATELIMIT_REGISTER_IP_CAPACITY:3}
+      refill-minutes: ${RATELIMIT_REGISTER_IP_REFILL_MINUTES:60}
+  refresh:
+    ip:
+      capacity: ${RATELIMIT_REFRESH_IP_CAPACITY:20}
+      refill-minutes: ${RATELIMIT_REFRESH_IP_REFILL_MINUTES:1}
+

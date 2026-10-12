@@ -1,0 +1,118 @@
+.skill-category-group {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.skill-category-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.skill-category-count {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-hover);
+  color: var(--color-text-secondary);
+}
+
+.skill-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  transition: all var(--duration-fast) var(--ease-default);
+}
+
+.skill-chip:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-surface-hover);
+}
+
+.skill-chip-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.skill-chip-name {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.skill-chip-prof {
+  font-size: 10px;
+  font-weight: var(--font-weight-medium);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+}
+
+.skill-chip-prof.prof-beginner {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+
+.skill-chip-prof.prof-intermediate {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.skill-chip-prof.prof-advanced {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+}
+
+.skill-chip-prof.prof-expert {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.skill-chip-exp {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono, monospace);
+}
+
+.skill-chip-remove-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.skill-chip-remove-btn:hover {
+  color: #ef4444;
+}

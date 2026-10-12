@@ -1,0 +1,59 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-saved {
+  background: rgba(100, 116, 139, 0.15);
+  color: var(--color-status-saved);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.badge-applied {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--color-status-applied);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-screening {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--color-status-screening);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.badge-interviewing {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-status-interview);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-offer {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-status-offer);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--color-status-rejected);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-withdrawn {
+  background: rgba(113, 113, 122, 0.15);
+  color: var(--color-status-withdrawn);
+  border: 1px solid rgba(113, 113, 122, 0.3);
+}
+
+.badge-default {
+  background: var(--color-surface-hover);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-default);
+}

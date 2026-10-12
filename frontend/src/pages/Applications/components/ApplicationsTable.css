@@ -1,0 +1,192 @@
+.applications-table-wrapper {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  text-align: left;
+}
+
+.applications-table th {
+  background: var(--color-surface-overlay);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.applications-table th.sortable {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.applications-table th.sortable:hover {
+  color: var(--color-text-primary);
+}
+
+.th-sort-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sort-icon {
+  font-size: 10px;
+  opacity: 0.4;
+}
+
+.sort-icon.active {
+  opacity: 1;
+  color: var(--color-accent-primary);
+}
+
+.applications-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+.applications-table tbody tr {
+  transition: background-color 0.12s ease;
+  cursor: pointer;
+}
+
+.applications-table tbody tr:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.applications-table tbody tr.selected {
+  background-color: var(--color-accent-subtle);
+}
+
+.applications-table tbody tr.active-row {
+  background-color: rgba(99, 102, 241, 0.1);
+  box-shadow: inset 3px 0 0 var(--color-accent-primary);
+}
+
+.applications-table tbody tr.active-row.selected {
+  background-color: rgba(99, 102, 241, 0.18);
+  box-shadow: inset 3px 0 0 var(--color-accent-primary);
+}
+
+.applications-table tbody tr:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: -2px;
+}
+
+.table-checkbox {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-accent-primary);
+}
+
+.table-checkbox:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.table-company-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.table-company-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.3));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.table-company-name {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.table-role-title {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.table-status-select {
+  background: var(--color-canvas-bg);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-primary);
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  outline: none;
+}
+
+.table-status-select:focus {
+  border-color: var(--color-accent-primary);
+}
+
+.table-status-select:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.table-actions-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.table-action-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  transition: all 0.12s ease;
+}
+
+.table-action-icon-btn:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.table-action-icon-btn:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.table-action-icon-btn.delete:hover {
+  color: var(--color-status-rejected);
+}
+
+.table-notes-preview {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <!--
+        ========================================================================
+        RULE 1: Eclipse Angus Activation - Angus Mail CPE False Positive
+        ========================================================================
+        Artifact: org.eclipse.angus:angus-activation:2.0.3
+        Vulnerability ID: CVE-2025-7962
+        Incorrect CPE Assigned by Dependency-Check: cpe:/a:eclipse:angus_mail
+        Identification: Verified CPE False Positive
+        Date of Verification: 2026-09-29
+
+        Technical Justification:
+        1. What the dependency actually is:
+           org.eclipse.angus:angus-activation provides the Jakarta Activation Framework
+           implementation (MIME type resolution and data handlers).
+        2. What product CVE-2025-7962 actually affects:
+           CVE-2025-7962 is a vulnerability strictly within the Angus Mail / Jakarta Mail
+           SMTP transport implementation (specifically handling malicious multi-line SMTP
+           server response sequences).
+        3. Why the CPE mapping is incorrect:
+           OWASP Dependency-Check mistakenly assigned 'cpe:/a:eclipse:angus_mail' to the
+           angus-activation jar because of vendor/group naming similarity. Angus Activation
+           contains no mail transport, SMTP protocol handler, or email sending code.
+        4. Why the suppression is safe:
+           This rule suppresses ONLY the incorrect Angus Mail CPE (cpe:/a:eclipse:angus_mail)
+           for org.eclipse.angus:angus-activation. It does NOT suppress by CVE globally, nor
+           does it suppress any legitimate Angus Activation CPE or future vulnerabilities
+           affecting the Activation library itself.
+    -->
+    <suppress>
+        <notes><![CDATA[
+        CPE False Positive: org.eclipse.angus:angus-activation is Jakarta Activation and does not contain
+        Angus Mail SMTP transport logic affected by CVE-2025-7962. Verified on 2026-09-29.
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.angus/angus-activation@.*$</packageUrl>
+        <cpe>cpe:/a:eclipse:angus_mail</cpe>
+    </suppress>
+
+    <!--
+        ========================================================================
+        RULE 2: Hibernate Validator - Nu Html Checker (validator.nu) CPE False Positive
+        ========================================================================
+        Artifact: org.hibernate.validator:hibernate-validator:9.1.3.Final
+        Vulnerability ID: CVE-2025-15104
+        Incorrect CPE Assigned by Dependency-Check: cpe:/a:validator:validator
+        Identification: Verified CPE False Positive
+        Date of Verification: 2026-09-29
+
+        Technical Justification:
+        1. What the dependency actually is:
+           org.hibernate.validator:hibernate-validator is the reference implementation
+           of Jakarta Bean Validation (Jakarta EE specification for bean validation).
+        2. What product CVE-2025-15104 actually affects:
+           CVE-2025-15104 is a Server-Side Request Forgery (SSRF) flaw in Nu Html Checker
+           (validator.nu / W3C HTML validator service).
+        3. Why the CPE mapping is incorrect:
+           OWASP Dependency-Check matched the generic keyword 'validator' in the artifact ID
+           and assigned 'cpe:/a:validator:validator' (which belongs to validator.nu).
+           Hibernate Validator is completely distinct from Nu Html Checker.
+        4. Why the suppression is safe:
+           This rule suppresses ONLY the erroneous 'cpe:/a:validator:validator' CPE for
+           org.hibernate.validator:hibernate-validator. The legitimate CPEs
+           (cpe:/a:hibernate:hibernate-validator and cpe:/a:redhat:hibernate_validator)
+           remain entirely active and unsuppressed, ensuring that any genuine Hibernate
+           Validator vulnerabilities will always be detected.
+    -->
+    <suppress>
+        <notes><![CDATA[
+        CPE False Positive: org.hibernate.validator:hibernate-validator is Jakarta Bean Validation and is unrelated
+        to the Nu Html Checker (validator.nu) SSRF vulnerability in CVE-2025-15104. Verified on 2026-09-29.
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.hibernate\.validator/hibernate-validator@.*$</packageUrl>
+        <cpe>cpe:/a:validator:validator</cpe>
+    </suppress>
+</suppressions>

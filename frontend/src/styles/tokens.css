@@ -17,9 +17,9 @@
   --color-text-inverse:    #111827; /* Dark Text on Light Badges */
 
   /* Brand Primary Accent */
-  --color-accent-primary:  #6366F1; /* Indigo Accent */
-  --color-accent-hover:    #4F46E5; /* Darker Indigo Hover */
-  --color-accent-subtle:   rgba(99, 102, 241, 0.12); /* Selected Row Fill */
+  --color-accent-primary:  #4F46E5; /* Indigo Accent - WCAG AA compliant */
+  --color-accent-hover:    #4338CA; /* Darker Indigo Hover */
+  --color-accent-subtle:   rgba(79, 70, 229, 0.15); /* Selected Row Fill */
 
   /* Semantic Status Colors */
   --color-status-saved:      #64748B; /* Slate Gray */

@@ -1,0 +1,148 @@
+.opportunity-filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-5);
+}
+
+.opportunity-filter-top {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.opportunity-search-wrapper {
+  flex: 1;
+  min-width: 260px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.opportunity-search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  font-size: var(--font-size-sm);
+}
+
+.opportunity-search-input {
+  width: 100%;
+  height: 38px;
+  padding: 0 36px;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.opportunity-search-input:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 2px var(--color-accent-subtle);
+}
+
+.opportunity-search-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opportunity-search-clear:hover {
+  color: var(--color-text-primary);
+}
+
+.opportunity-filter-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.opportunity-filter-groups {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.opportunity-select {
+  height: 34px;
+  padding: 0 var(--space-3);
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.opportunity-select:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+.opportunity-filter-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.opportunity-count {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.opportunity-clear-btn {
+  background: none;
+  border: none;
+  color: var(--color-accent-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.opportunity-clear-btn:hover {
+  background: var(--color-accent-subtle);
+}
+
+@media (max-width: 640px) {
+  .opportunity-search-wrapper {
+    min-width: 100%;
+  }
+
+  .opportunity-filter-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .opportunity-select {
+    width: 100%;
+  }
+}

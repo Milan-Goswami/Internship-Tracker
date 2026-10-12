@@ -1,0 +1,66 @@
+.interview-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-height: 75vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.interview-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.interview-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.interview-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.interview-form-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.interview-form-input,
+.interview-form-select,
+.interview-form-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.interview-form-input:focus,
+.interview-form-select:focus,
+.interview-form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 2px var(--color-accent-subtle);
+}
+
+.interview-form-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.interview-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: var(--space-2);
+}

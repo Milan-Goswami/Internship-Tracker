@@ -1,0 +1,32 @@
+.applications-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+.applications-page-header {
+  margin-bottom: var(--space-4);
+}
+
+.applications-page-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-1);
+}
+
+.applications-page-subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+}
